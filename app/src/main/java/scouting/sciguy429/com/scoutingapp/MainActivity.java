@@ -66,9 +66,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             try {
-                for (int i = 0; i <= 100; i++) {
-                    mmSocket.getOutputStream().write(i);
+                mmSocket.getOutputStream().write("This is a string boi".getBytes());
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                mmSocket.getOutputStream().write("This is a second string boi".getBytes());
                 //mmSocket.close();
             } catch (IOException e) {
                 e.printStackTrace();
