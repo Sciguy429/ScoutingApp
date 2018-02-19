@@ -1,6 +1,7 @@
 package scouting.sciguy429.com.scoutingapp.Activities;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -33,5 +34,6 @@ public class MatchesActivity extends ListActivity {
     public void onListItemClick(ListView l, View v, int position, long id) {
         // Do something when a list item is clicked
         Toast.makeText(getApplicationContext(), "Button: " + id, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), MatchViewActivity.class));
     }
 }
