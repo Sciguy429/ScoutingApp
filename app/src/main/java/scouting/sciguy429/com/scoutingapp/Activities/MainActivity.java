@@ -1,4 +1,4 @@
-package scouting.sciguy429.com.scoutingapp;
+package scouting.sciguy429.com.scoutingapp.Activities;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.Set;
 import java.util.UUID;
+
+import scouting.sciguy429.com.scoutingapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
