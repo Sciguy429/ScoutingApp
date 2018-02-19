@@ -23,7 +23,8 @@
 
         <service android:name=".Services.BTService" />
 
-        <activity android:name=".Activities.MainMenuActivity"></activity>
+        <activity android:name=".Activities.MainMenuActivity" />
+        <activity android:name=".Activities.MatchesActivity"></activity>
     </application>
 
 </manifest>

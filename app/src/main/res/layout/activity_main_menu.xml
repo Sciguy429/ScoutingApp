@@ -7,7 +7,7 @@
     tools:context="scouting.sciguy429.com.scoutingapp.Activities.MainMenuActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/matchesButton"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:layout_marginEnd="8dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/teamsButton"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:layout_marginEnd="8dp"
@@ -28,10 +28,10 @@
         android:text="Teams"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/matchesButton" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/settingsButton"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:layout_marginEnd="8dp"
@@ -40,5 +40,5 @@
         android:text="Settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/teamsButton" />
 </android.support.constraint.ConstraintLayout>
