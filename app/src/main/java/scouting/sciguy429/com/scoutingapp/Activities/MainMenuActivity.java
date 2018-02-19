@@ -23,7 +23,7 @@ public class MainMenuActivity extends AppCompatActivity {
         matchesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MatchesActivity.class));
+                //startActivity(new Intent(getApplicationContext(), MatchesActivity.class));
             }
         });
 
