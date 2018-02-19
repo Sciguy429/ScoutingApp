@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +26,7 @@
         <service android:name=".Services.BTService" />
 
         <activity android:name=".Activities.MainMenuActivity" />
+        <activity android:name=".Activities.MatchesActivity"></activity>
     </application>
 
 </manifest>

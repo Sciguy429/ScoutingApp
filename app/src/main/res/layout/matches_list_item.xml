@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/matchNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0: "
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/redTeam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp" />
+
+    <LinearLayout
+        android:id="@+id/redTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/matchNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp">
+
+        <TextView
+            android:id="@+id/teamR1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team 1: 0"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:id="@+id/teamR2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team 2: 0"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:id="@+id/teamR3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team 3: 0"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/blueTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/redTeam"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp">
+
+        <TextView
+            android:id="@+id/teamB1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team 1: 0"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/teamB2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team 2: 0"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/teamB3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team 3: 0"
+            android:textColor="@android:color/holo_blue_dark" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
