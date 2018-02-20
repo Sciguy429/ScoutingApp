@@ -1,7 +1,9 @@
 package scouting.sciguy429.com.scoutingapp.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -40,5 +42,12 @@ public class MatchViewActivity extends AppCompatActivity {
         teamB1.setText("Team 1: " + match.teamB1);
         teamB2.setText("Team 2: " + match.teamB2);
         teamB3.setText("Team 3: " + match.teamB3);
+
+        teamR1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MatchEditActivity.class));
+            }
+        });
     }
 }

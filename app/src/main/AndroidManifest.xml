@@ -26,7 +26,8 @@
 
         <activity android:name=".Activities.MainMenuActivity" />
         <activity android:name=".Activities.MatchesActivity" />
-        <activity android:name=".Activities.MatchViewActivity"></activity>
+        <activity android:name=".Activities.MatchViewActivity" />
+        <activity android:name=".Activities.MatchEditActivity"></activity>
     </application>
 
 </manifest>
