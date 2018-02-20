@@ -15,6 +15,7 @@ import scouting.sciguy429.com.scoutingapp.Adapters.MatchesAdapter;
 
 public class MatchesActivity extends ListActivity {
 
+    ArrayList<Match> matches = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,6 @@ public class MatchesActivity extends ListActivity {
                 new Match(2, 1145, 2895, 3752, 4974, 5115, 6745),
                 new Match(3, 1145, 2826, 3002, 4074, 5586, 6740)
         };
-        ArrayList<Match> matches = new ArrayList<>();
         matches.addAll(Arrays.asList(mat));
 
         MatchesAdapter matchesAdapter = new MatchesAdapter(getApplicationContext(), matches);
@@ -33,7 +33,9 @@ public class MatchesActivity extends ListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         // Do something when a list item is clicked
-        Toast.makeText(getApplicationContext(), "Button: " + id, Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), MatchViewActivity.class));
+        Toast.makeText(getApplicationContext(), "Number: " + matches.get(position).matchNumber, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), MatchViewActivity.class);
+        intent.putExtra("match", matches.get(position));
+        startActivity(intent);
     }
 }
