@@ -28,13 +28,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Cubes Placed On Scale"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintBottom_toBottomOf="@+id/matchCubesOnScale"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/matchName"
         android:layout_marginLeft="8dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/matchCubesOnScale"
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -53,13 +53,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Cubes Placed On Switch"
-        app:layout_constraintBottom_toBottomOf="@+id/editText4"
+        app:layout_constraintBottom_toBottomOf="@+id/matchCubesOnSwitch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesOnScale"
         android:layout_marginLeft="8dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/matchCubesOnSwitch"
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,7 +67,7 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesOnScale"
         android:layout_marginLeft="8dp" />
 
     <TextView
@@ -78,13 +78,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Cubes Placed In Portal"
-        app:layout_constraintBottom_toBottomOf="@+id/editText5"
+        app:layout_constraintBottom_toBottomOf="@+id/matchCubesInPortal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesOnSwitch"
         android:layout_marginLeft="8dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/matchCubesInPortal"
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -92,7 +92,7 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesOnSwitch"
         android:layout_marginLeft="8dp" />
 
     <TextView
@@ -103,13 +103,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Fouls"
-        app:layout_constraintBottom_toBottomOf="@+id/editText7"
+        app:layout_constraintBottom_toBottomOf="@+id/matchFouls"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesInPortal"
         android:layout_marginLeft="8dp" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/matchFouls"
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -117,7 +117,7 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesInPortal"
         android:layout_marginLeft="8dp" />
 
     <TextView
@@ -128,13 +128,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Cards"
-        app:layout_constraintBottom_toBottomOf="@+id/editText8"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintBottom_toBottomOf="@+id/matchCards"
+        app:layout_constraintStart_toEndOf="@+id/matchFouls"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesInPortal"
         android:layout_marginLeft="8dp" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/matchCards"
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -142,33 +142,33 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/matchCubesInPortal"
         android:layout_marginLeft="8dp" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/matchClimb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Climb"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8"
+        app:layout_constraintTop_toBottomOf="@+id/matchCards"
         android:layout_marginLeft="8dp" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/matchFell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Fell"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/editText8"
+        app:layout_constraintStart_toEndOf="@+id/matchClimb"
+        app:layout_constraintTop_toBottomOf="@+id/matchCards"
         android:layout_marginLeft="8dp" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/matchComments"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -181,7 +181,7 @@
         app:layout_constraintBottom_toTopOf="@+id/matchCancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintTop_toBottomOf="@+id/matchFell" />
 
     <Button
         android:id="@+id/matchCancel"
