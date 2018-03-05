@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import scouting.sciguy429.com.scoutingapp.Adapters.Match;
+import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.R;
 
 public class MatchViewActivity extends AppCompatActivity {

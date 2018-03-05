@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.R;
 
 public class MatchesAdapter extends ArrayAdapter<Match> {

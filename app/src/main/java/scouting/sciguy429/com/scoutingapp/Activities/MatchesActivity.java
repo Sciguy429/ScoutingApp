@@ -10,7 +10,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import scouting.sciguy429.com.scoutingapp.Adapters.Match;
+import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.Adapters.MatchesAdapter;
 
 public class MatchesActivity extends ListActivity {
