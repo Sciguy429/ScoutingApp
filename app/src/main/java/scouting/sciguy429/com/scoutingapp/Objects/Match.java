@@ -1,4 +1,4 @@
-package scouting.sciguy429.com.scoutingapp.Adapters;
+package scouting.sciguy429.com.scoutingapp.Objects;
 
 import android.os.Parcel;
 import android.os.Parcelable;
