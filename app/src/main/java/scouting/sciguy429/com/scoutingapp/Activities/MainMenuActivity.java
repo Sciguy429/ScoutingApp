@@ -31,7 +31,7 @@ public class MainMenuActivity extends AppCompatActivity {
         teamsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getApplicationContext(), TeamViewActivity.class));
             }
         });
 

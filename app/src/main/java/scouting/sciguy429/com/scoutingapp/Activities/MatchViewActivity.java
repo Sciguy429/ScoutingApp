@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.R;
+import scouting.sciguy429.com.scoutingapp.Utilities.H2SQL;
 
 public class MatchViewActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MatchViewActivity extends AppCompatActivity {
     Button teamB2;
     Button teamB3;
     Match match;
+
+    H2SQL H2SQL = new H2SQL();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class MatchViewActivity extends AppCompatActivity {
         teamB2 = findViewById(R.id.teamB2Button);
         teamB3 = findViewById(R.id.teamB3Button);
 
-        match = getIntent().getParcelableExtra("match");
+        match = H2SQL.getMatch(getIntent().getIntExtra("match", 1));
         matchNumber.setText("Match Number: " + match.matchNumber);
         teamR1.setText("Team 1: " + match.teamR1);
         teamR2.setText("Team 2: " + match.teamR2);
@@ -46,7 +49,10 @@ public class MatchViewActivity extends AppCompatActivity {
         teamR1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MatchEditActivity.class));
+                Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
+                intent.putExtra("match", match.matchNumber);
+                intent.putExtra("match", 1288);
+                startActivity(intent);
             }
         });
     }

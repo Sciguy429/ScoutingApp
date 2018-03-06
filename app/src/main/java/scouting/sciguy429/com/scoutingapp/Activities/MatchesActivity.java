@@ -8,24 +8,21 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.Adapters.MatchesAdapter;
+import scouting.sciguy429.com.scoutingapp.Utilities.H2SQL;
 
 public class MatchesActivity extends ListActivity {
 
     ArrayList<Match> matches = new ArrayList<>();
+    H2SQL H2SQL = new H2SQL();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Match[] mat = {
-                new Match(1, 1465, 2213, 3438, 4986, 5363, 6981),
-                new Match(2, 1145, 2895, 3752, 4974, 5115, 6745),
-                new Match(3, 1145, 2826, 3002, 4074, 5586, 6740)
-        };
-        matches.addAll(Arrays.asList(mat));
-
+        for (int i = 1; i <= H2SQL.getNumberOfMatches(); i++) {
+            matches.add(H2SQL.getMatch(i));
+        }
         MatchesAdapter matchesAdapter = new MatchesAdapter(getApplicationContext(), matches);
         setListAdapter(matchesAdapter);
     }
@@ -35,7 +32,7 @@ public class MatchesActivity extends ListActivity {
         // Do something when a list item is clicked
         Toast.makeText(getApplicationContext(), "Number: " + matches.get(position).matchNumber, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), MatchViewActivity.class);
-        intent.putExtra("match", matches.get(position));
+        intent.putExtra("match", position + 1);
         startActivity(intent);
     }
 }
