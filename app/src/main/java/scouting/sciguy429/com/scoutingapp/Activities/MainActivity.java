@@ -4,6 +4,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,11 +17,13 @@ import java.util.Set;
 import java.util.UUID;
 
 import scouting.sciguy429.com.scoutingapp.R;
+import scouting.sciguy429.com.scoutingapp.Utilities.H2SQL;
 
 public class MainActivity extends AppCompatActivity {
 
     final String TAG = "ScoutingApp";
     final String ServerBTMAC = "00:50:F2:7E:80:91";
+    H2SQL H2SQL = new H2SQL();
 
     Button loginButton;
 
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        H2SQL.getMatch(1);
 
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
