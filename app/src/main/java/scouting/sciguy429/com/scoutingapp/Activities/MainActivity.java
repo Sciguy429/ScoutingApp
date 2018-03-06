@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        H2SQL.getMatch(1);
-
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
             // Device doesn't support Bluetooth
             Toast.makeText(this, "Device Dose Not Support Bluetooth", Toast.LENGTH_LONG).show();
         }
-        if (!mBluetoothAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, 1);
-        }
+        //if (!mBluetoothAdapter.isEnabled()) {
+        //    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        //    startActivityForResult(enableBtIntent, 1);
+        //}
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 
         if (pairedDevices.size() > 0) {
