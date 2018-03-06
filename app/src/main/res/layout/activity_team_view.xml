@@ -171,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/teamCubePlaceMethod" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/teamComments"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -190,7 +190,7 @@
         android:layout_marginStart="8dp"
         android:text="Cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/teamComments" />
 
     <Button
         android:id="@+id/teamOk"
@@ -199,7 +199,7 @@
         android:layout_marginEnd="8dp"
         android:text="Ok"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/teamComments" />
 </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
