@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ScoutingApp.iml" filepath="$PROJECT_DIR$/ScoutingApp.iml" />
-      <module fileurl="file://C:\Users\Christopher King\StudioProjects\ScoutingApp\.idea\ScoutingApp.iml" filepath="C:\Users\Christopher King\StudioProjects\ScoutingApp\.idea\ScoutingApp.iml" />
       <module fileurl="file://D:\Android Studio\ScoutingApp\ScoutingApp.iml" filepath="D:\Android Studio\ScoutingApp\ScoutingApp.iml" />
+      <module fileurl="file://C:\Users\Christopher King\StudioProjects\ScoutingApp\.idea\ScoutingApp.iml" filepath="C:\Users\Christopher King\StudioProjects\ScoutingApp\.idea\ScoutingApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import scouting.sciguy429.com.scoutingapp.Objects.Match;
+import scouting.sciguy429.com.scoutingapp.Objects.MatchData;
 
 public class H2SQL {
     private final String TAG = "H2SQL";
@@ -22,6 +23,21 @@ public class H2SQL {
             e.printStackTrace();
         }
     }
+    public int getNumberOfMatches() {
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT COUNT (*) FROM MATCHES");
+            int count = -1;
+            if (resultSet.next())
+            {
+                count = resultSet.getInt(1);
+            }
+            return count;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
     public Match getMatch(int matchNumber) {
         try {
             Statement statement = conn.createStatement();
@@ -33,5 +49,17 @@ public class H2SQL {
             e.printStackTrace();
             return null;
         }
+    }
+    public MatchData getMatchData(int matchNumber, int teamNumber) {
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * From MATCHES WHERE MATCH_NUMBER=" + String.valueOf(matchNumber));
+            resultSet.first();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return null;
     }
 }
