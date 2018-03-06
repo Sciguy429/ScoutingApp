@@ -1,7 +1,6 @@
 package scouting.sciguy429.com.scoutingapp.Utilities;
 
 import android.os.Environment;
-import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
