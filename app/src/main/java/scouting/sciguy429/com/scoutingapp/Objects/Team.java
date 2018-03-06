@@ -1,9 +1,6 @@
 package scouting.sciguy429.com.scoutingapp.Objects;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class Team implements Parcelable {
+public class Team {
     public int matchNumber;
     public int teamR1;
     public int teamR2;
@@ -19,43 +16,5 @@ public class Team implements Parcelable {
         this.teamB1 = teamB1;
         this.teamB2 = teamB2;
         this.teamB3 = teamB3;
-    }
-
-    private Team(Parcel in) {
-        matchNumber = in.readInt();
-        teamR1 = in.readInt();
-        teamR2 = in.readInt();
-        teamR3 = in.readInt();
-        teamB1 = in.readInt();
-        teamB2 = in.readInt();
-        teamB3 = in.readInt();
-    }
-
-    public static final Creator<Team> CREATOR = new Creator<Team>() {
-        @Override
-        public Team createFromParcel(Parcel in) {
-            return new Team(in);
-        }
-
-        @Override
-        public Team[] newArray(int size) {
-            return new Team[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(matchNumber);
-        parcel.writeInt(teamR1);
-        parcel.writeInt(teamR2);
-        parcel.writeInt(teamR3);
-        parcel.writeInt(teamB1);
-        parcel.writeInt(teamB2);
-        parcel.writeInt(teamB3);
     }
 }
