@@ -27,13 +27,15 @@ public class H2SQL {
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * From MATCHES WHERE MATCH_NUMBER=" + String.valueOf(matchNumber));
-            while (resultSet.next()) {
-                Log.d(TAG, String.valueOf(resultSet.getInt(1)));
+            if (resultSet.next()) {
+                return new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7));
             }
-            return new Match(0, 0, 0, 0, 0, 0, 0);
+            else {
+                return null;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return new Match(0, 0, 0, 0, 0, 0, 0);
+            return null;
         }
     }
 }
