@@ -112,12 +112,12 @@
             android:layout_marginLeft="8dp" />
 
         <CheckBox
-            android:id="@+id/teamCanPlaceInAnyOrentation"
+            android:id="@+id/teamCanPlaceInAnyOrientation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Can Place In Any Orentation"
+            android:text="Can Place In Any Orientation"
             app:layout_constraintStart_toEndOf="@+id/teamCanPlaceInPortal"
             app:layout_constraintTop_toBottomOf="@+id/teamCanPlaceOnSwitch"
             android:layout_marginLeft="8dp" />
