@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.Objects.MatchData;
@@ -45,6 +46,21 @@ public class H2SQL {
             resultSet.first();
             return new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7));
             }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<Match> getMatches() {
+        ArrayList<Match> matches = new ArrayList<>();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * From MATCHES");
+            while (resultSet.next()) {
+                matches.add(new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7)));
+            }
+            return matches;
+        }
         catch (SQLException e) {
             e.printStackTrace();
             return null;

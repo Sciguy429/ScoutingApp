@@ -20,9 +20,7 @@ public class MatchesActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        for (int i = 1; i <= H2SQL.getNumberOfMatches(); i++) {
-            matches.add(H2SQL.getMatch(i));
-        }
+        matches = H2SQL.getMatches();
         MatchesAdapter matchesAdapter = new MatchesAdapter(getApplicationContext(), matches);
         setListAdapter(matchesAdapter);
     }
