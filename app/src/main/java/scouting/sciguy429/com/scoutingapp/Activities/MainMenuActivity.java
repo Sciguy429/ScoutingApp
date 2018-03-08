@@ -27,6 +27,9 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        matchesButton.setAlpha(0.5F);
+        matchesButton.setClickable(false);
+
         teamsButton = findViewById(R.id.teamsButton);
         teamsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +45,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
             }
         });
+
+        settingsButton.setAlpha(0.5F);
+        settingsButton.setClickable(false);
     }
 }
