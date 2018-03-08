@@ -30,7 +30,8 @@
         <activity android:name=".Activities.MatchesActivity" />
         <activity android:name=".Activities.MatchViewActivity" />
         <activity android:name=".Activities.MatchEditActivity" />
-        <activity android:name=".Activities.TeamViewActivity"></activity>
+        <activity android:name=".Activities.TeamViewActivity" />
+        <activity android:name=".Activities.TeamsActivity"></activity>
     </application>
 
 </manifest>

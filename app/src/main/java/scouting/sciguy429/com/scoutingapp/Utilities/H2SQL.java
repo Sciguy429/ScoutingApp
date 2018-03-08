@@ -108,4 +108,12 @@ public class H2SQL {
         }
         return null;
     }
+    public void setTeam(Team team) {
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate("REPLACE INTO TEAMS VALUES (" + team.teamNumber + ", '" + team.teamName + "', '" + team.driveTrainInfo + "', '', '', " + team.robotHeight + ", " + team.canPlaceOnScale + ", " + team.canPlaceOnSwitch + ", " + team.canClimb + ", " + team.canPlaceInPortal + ", " + team.canPlaceInAnyOrientation + ", '" + team.cubePlaceMethod + "', '" + team.comments + "')");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -17,13 +17,11 @@ import java.util.Set;
 import java.util.UUID;
 
 import scouting.sciguy429.com.scoutingapp.R;
-import scouting.sciguy429.com.scoutingapp.Utilities.H2SQL;
 
 public class MainActivity extends AppCompatActivity {
 
     final String TAG = "ScoutingApp";
     final String ServerBTMAC = "00:50:F2:7E:80:91";
-    H2SQL H2SQL = new H2SQL();
 
     Button loginButton;
 
