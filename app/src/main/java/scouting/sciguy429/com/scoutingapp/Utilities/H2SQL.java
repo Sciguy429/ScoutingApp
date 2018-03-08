@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import scouting.sciguy429.com.scoutingapp.Objects.DBBAK;
 import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.Objects.MatchData;
 import scouting.sciguy429.com.scoutingapp.Objects.Team;
@@ -22,6 +23,14 @@ public class H2SQL {
             conn = DriverManager.getConnection("jdbc:h2:" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB/scouting", "JAVAADMIN", "%Lc3W+z~Y`sQ*?Zk"); //Connect To The H2 DB With JAVAADMIN
             //conn.close();
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void initializeDatabase(){
+        try {
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(new DBBAK().sql);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

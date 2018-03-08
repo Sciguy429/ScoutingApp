@@ -1,46 +1,85 @@
 package scouting.sciguy429.com.scoutingapp.Activities;
 
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import java.io.IOException;
-import java.util.Set;
-import java.util.UUID;
+import java.io.File;
 
 import scouting.sciguy429.com.scoutingapp.R;
+import scouting.sciguy429.com.scoutingapp.Utilities.H2SQL;
 
 public class MainActivity extends AppCompatActivity {
 
     final String TAG = "ScoutingApp";
-    final String ServerBTMAC = "00:50:F2:7E:80:91";
+    //final String ServerBTMAC = "00:50:F2:7E:80:91";
 
-    Button loginButton;
+    Boolean storage = true;
 
-    BluetoothDevice ServerBTDevice = null;
-    BluetoothSocket mmSocket;
+    TextView status;
+    Button initButton;
+    Button startButton;
+
+    //BluetoothDevice ServerBTDevice = null;
+    //BluetoothSocket mmSocket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            storage = false;
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+        }
+
+        status = findViewById(R.id.status);
+
+        initButton = findViewById(R.id.initServer);
+        initButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteRecursive(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB/"));
+                new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB/").mkdirs();
+
+                H2SQL H2SQL = new H2SQL();
+                H2SQL.initializeDatabase();
+                startButton.setAlpha(1.0F);
+                startButton.setClickable(true);
+                status.setText("Server Valid");
+            }
+        });
+
+        startButton = findViewById(R.id.start);
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
             }
         });
 
+        if (storage) {
+            storage = false;
+            if (new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB/", "scouting.mv.db").exists()) {
+                startButton.setAlpha(1.0F);
+                startButton.setClickable(true);
+                status.setText("Server Valid");
+            } else {
+                startButton.setAlpha(0.5F);
+                startButton.setClickable(false);
+                status.setText("Server Not Initialized");
+            }
+        }
+
+        /*
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
             // Device doesn't support Bluetooth
@@ -93,6 +132,36 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        */
+    }
+    void deleteRecursive(File fileOrDirectory) {
+        if (fileOrDirectory.isDirectory())
+            for (File child : fileOrDirectory.listFiles())
+                deleteRecursive(child);
+
+        fileOrDirectory.delete();
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 0: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    storage = true;
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                } else {
+                    System.exit(0);
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request.
         }
     }
 }
