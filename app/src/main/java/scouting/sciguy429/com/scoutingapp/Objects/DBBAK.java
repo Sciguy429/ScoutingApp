@@ -137,5 +137,5 @@ public class DBBAK {
             "(6744, 'Mehville Pi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),\n" +
             "(7117, 'Robotic Dragons', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),\n" +
             "(7255, 'Mechanical Mettle', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);   \n";
-    DBBAK () {}
+    public DBBAK () {}
 }
