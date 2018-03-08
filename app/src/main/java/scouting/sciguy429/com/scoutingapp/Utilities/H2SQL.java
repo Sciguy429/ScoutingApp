@@ -34,21 +34,6 @@ public class H2SQL {
             e.printStackTrace();
         }
     }
-    public int getNumberOfMatches() {
-        try {
-            Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT COUNT (*) FROM MATCHES");
-            int count = -1;
-            if (resultSet.next())
-            {
-                count = resultSet.getInt(1);
-            }
-            return count;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
     public Match getMatch(int matchNumber) {
         try {
             Statement statement = conn.createStatement();
