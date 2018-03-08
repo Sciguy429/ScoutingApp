@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import scouting.sciguy429.com.scoutingapp.Objects.Match;
 import scouting.sciguy429.com.scoutingapp.Objects.MatchData;
+import scouting.sciguy429.com.scoutingapp.Objects.Team;
 
 public class H2SQL {
     private final String TAG = "H2SQL";
@@ -66,7 +67,7 @@ public class H2SQL {
             return null;
         }
     }
-    public MatchData getMatchData(int matchNumber, int teamNumber) {
+    public MatchData getMatchData(int matchNumber, int teamNumber) { //todo finish
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * From MATCHES WHERE MATCH_NUMBER=" + String.valueOf(matchNumber));
@@ -76,6 +77,35 @@ public class H2SQL {
             return null;
         }
 
+        return null;
+    }
+    public ArrayList<Team> getTeams() {
+        ArrayList<Team> teams = new ArrayList<>();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * From TEAMS");
+            while (resultSet.next()) {
+                teams.add(new Team(resultSet.getInt(1), resultSet.getString(2), resultSet.getFloat(6), resultSet.getBoolean(9), resultSet.getBoolean(8), resultSet.getBoolean(7), resultSet.getBoolean(10), resultSet.getBoolean(11), resultSet.getString(3), resultSet.getString(12), resultSet.getString(13)));
+            }
+            return teams;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public Team getTeam(int teamNumber) {
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * From TEAMS WHERE TEAM_NUMBER=" + String.valueOf(teamNumber));
+            if (resultSet.first()) {
+                System.out.println(resultSet.getString(2));
+                return new Team(resultSet.getInt(1), resultSet.getString(2), resultSet.getFloat(6), resultSet.getBoolean(9), resultSet.getBoolean(8), resultSet.getBoolean(7), resultSet.getBoolean(10), resultSet.getBoolean(11), resultSet.getString(3), resultSet.getString(12), resultSet.getString(13));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
         return null;
     }
 }
