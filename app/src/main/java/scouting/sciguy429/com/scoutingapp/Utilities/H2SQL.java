@@ -63,16 +63,14 @@ public class H2SQL {
     }
     public MatchData getMatchData(int matchNumber, int teamNumber) {
         try {
-            int teamRow = 2;
+            int teamRow;
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * From MATCHES WHERE MATCH_NUMBER=" + String.valueOf(matchNumber));
             resultSet.first();
-            for (int i = 1; i < 4; i++) {
-                teamRow = i * 9;
+            for (int i = 0; i < 6; i++) {
+                teamRow = (i * 9) + 2;
                 if (resultSet.getInt(teamRow) == teamNumber) {
-                    System.out.println(teamRow);
-                    break;
-                    //todo pull remaining data
+                    return new MatchData(matchNumber, teamNumber, i, resultSet.getInt(teamRow + 1), resultSet.getInt(teamRow + 2), resultSet.getInt(teamRow + 3), resultSet.getBoolean(teamRow + 4), resultSet.getBoolean(teamRow + 5), resultSet.getInt(teamRow + 6), resultSet.getInt(teamRow + 7), resultSet.getString(teamRow + 8));
                 }
             }
         } catch (SQLException e) {
@@ -81,6 +79,33 @@ public class H2SQL {
         }
 
         return null;
+    }
+    public void setMatchData(MatchData matchData) {
+        try {
+            Statement statement = conn.createStatement();
+            char c = 'R';
+            matchData.matchTeamDesignation++;
+            if (matchData.matchTeamDesignation > 3) {
+                matchData.matchTeamDesignation = matchData.matchTeamDesignation - 3;
+                c = 'B';
+            }
+
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_CUBES_ON_SCALE = " + String.valueOf(matchData.cubesOnScale) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_CUBES_ON_SWITCH = " + String.valueOf(matchData.cubesOnSwitch) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_CUBES_IN_PORTAL = " + String.valueOf(matchData.cubesInPortal) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_CLIMB = " + String.valueOf(matchData.climb) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_FELL = " + String.valueOf(matchData.fell) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_FOULS = " + String.valueOf(matchData.fouls) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_CARDS = " + String.valueOf(matchData.cards) + " WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+
+            statement.executeUpdate("UPDATE MATCHES SET MATCH_" + c + String.valueOf(matchData.matchTeamDesignation) + "_COMMENT = '" + matchData.comment + "' WHERE MATCH_NUMBER = " + String.valueOf(matchData.matchNumber) + ";");
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public ArrayList<Team> getTeams() {
         ArrayList<Team> teams = new ArrayList<>();
