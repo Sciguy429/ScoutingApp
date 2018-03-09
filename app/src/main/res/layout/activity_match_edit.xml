@@ -226,7 +226,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/matchCubesOnScale"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/matchCubesOnScale">
+        app:layout_constraintTop_toTopOf="@+id/matchCubesOnScale"
+        android:layout_marginRight="8dp">
 
         <Button
             android:id="@+id/cubesOnScaleIncrement"
@@ -256,7 +257,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/matchCubesOnSwitch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/matchCubesOnSwitch">
+        app:layout_constraintTop_toTopOf="@+id/matchCubesOnSwitch"
+        android:layout_marginRight="8dp">
 
         <Button
             android:id="@+id/cubesOnSwitchIncrement"
@@ -286,7 +288,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/matchCubesInPortal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/matchCubesInPortal">
+        app:layout_constraintTop_toTopOf="@+id/matchCubesInPortal"
+        android:layout_marginRight="8dp">
 
         <Button
             android:id="@+id/cubesInPortalIncrement"
