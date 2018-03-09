@@ -2,7 +2,7 @@ package scouting.sciguy429.com.scoutingapp.Objects;
 
 public class MatchData {
     public Integer matchNumber;
-    public String matchTeamDesignation;
+    public Integer matchTeamDesignation;
     public Integer cubesOnScale;
     public Integer cubesOnSwitch;
     public Integer cubesInPortal;
@@ -12,7 +12,7 @@ public class MatchData {
     public Integer cards;
     public String comment;
 
-    public MatchData(Integer matchNumber, String matchTeamDesignation, Integer cubesOnScale, Integer cubesOnSwitch, Integer cubesInPortal, Boolean climb, Boolean fell, Integer fouls, Integer cards, String comment) {
+    public MatchData(Integer matchNumber, Integer matchTeamDesignation, Integer cubesOnScale, Integer cubesOnSwitch, Integer cubesInPortal, Boolean climb, Boolean fell, Integer fouls, Integer cards, String comment) {
         if (matchNumber == null) {
             this.matchNumber = 0;
         }
@@ -20,7 +20,7 @@ public class MatchData {
             this.matchNumber = matchNumber;
         }
         if (matchTeamDesignation == null) {
-            this.matchTeamDesignation = "";
+            this.matchTeamDesignation = 0;
         }
         else {
             this.matchTeamDesignation = matchTeamDesignation;
