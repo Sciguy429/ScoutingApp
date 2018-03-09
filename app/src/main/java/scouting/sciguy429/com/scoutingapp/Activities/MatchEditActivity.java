@@ -78,7 +78,7 @@ public class MatchEditActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                H2SQL.setMatchData(new MatchData(matchData.matchNumber, matchData.teamNumber, matchData.matchTeamDesignation, Integer.valueOf(cubesPlacedOnScale.getText().toString()), Integer.valueOf(cubesPlacedOnSwitch.getText().toString()), Integer.valueOf(cubesPlacedInPortal.getText().toString()), climb.isChecked(), fell.isChecked(), Integer.valueOf(fouls.getText().toString()), Integer.valueOf(cards.getText().toString()), comments.getText().toString()));
+                H2SQL.setMatchData(new MatchData(matchData.matchNumber, matchData.teamNumber, matchData.matchTeamDesignation, Integer.valueOf(cubesPlacedOnScale.getText().toString()), Integer.valueOf(cubesPlacedOnSwitch.getText().toString()), Integer.valueOf(cubesPlacedInPortal.getText().toString()), climb.isChecked(), fell.isChecked(), Integer.valueOf(fouls.getText().toString()), Integer.valueOf(cards.getText().toString()), comments.getText().toString().replace("'", "")));
                 finish();
             }
         });
