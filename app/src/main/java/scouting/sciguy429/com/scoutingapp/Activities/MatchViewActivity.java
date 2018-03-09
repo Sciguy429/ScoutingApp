@@ -53,6 +53,7 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
+                intent.putExtra("team", match.teamR1);
                 startActivity(intent);
             }
         });
@@ -61,6 +62,7 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
+                intent.putExtra("team", match.teamR2);
                 startActivity(intent);
             }
         });
@@ -69,6 +71,7 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
+                intent.putExtra("team", match.teamR3);
                 startActivity(intent);
             }
         });
@@ -78,6 +81,7 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
+                intent.putExtra("team", match.teamB1);
                 startActivity(intent);
             }
         });
@@ -86,6 +90,7 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
+                intent.putExtra("team", match.teamB2);
                 startActivity(intent);
             }
         });
@@ -94,6 +99,7 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
+                intent.putExtra("team", match.teamB3);
                 startActivity(intent);
             }
         });
