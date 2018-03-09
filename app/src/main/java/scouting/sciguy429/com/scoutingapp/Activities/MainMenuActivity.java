@@ -12,7 +12,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
     Button matchesButton;
     Button teamsButton;
-    Button settingsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +26,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        matchesButton.setAlpha(0.5F);
-        matchesButton.setClickable(false);
-
         teamsButton = findViewById(R.id.teamsButton);
         teamsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,16 +33,5 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), TeamsActivity.class));
             }
         });
-
-        settingsButton = findViewById(R.id.settingsButton);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        settingsButton.setAlpha(0.5F);
-        settingsButton.setClickable(false);
     }
 }
