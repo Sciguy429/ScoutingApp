@@ -30,7 +30,8 @@
         android:text="Cubes Placed On Scale"
         app:layout_constraintBottom_toBottomOf="@+id/matchCubesOnScale"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/matchCubesOnScale" />
+        app:layout_constraintTop_toTopOf="@+id/matchCubesOnScale"
+        android:layout_marginLeft="8dp" />
 
     <EditText
         android:id="@+id/matchCubesOnScale"
@@ -41,7 +42,8 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/teamName" />
+        app:layout_constraintTop_toBottomOf="@+id/teamNumber"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -204,7 +206,7 @@
         android:layout_marginRight="8dp" />
 
     <TextView
-        android:id="@+id/teamName"
+        android:id="@+id/teamNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
