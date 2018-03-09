@@ -39,7 +39,7 @@ public class H2SQL {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * From MATCHES WHERE MATCH_NUMBER=" + String.valueOf(matchNumber));
             resultSet.first();
-            return new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7));
+            return new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(11), resultSet.getInt(20), resultSet.getInt(29), resultSet.getInt(38), resultSet.getInt(47));
             }
         catch (SQLException e) {
             e.printStackTrace();
@@ -52,7 +52,7 @@ public class H2SQL {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * From MATCHES");
             while (resultSet.next()) {
-                matches.add(new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7)));
+                matches.add(new Match(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(11), resultSet.getInt(20), resultSet.getInt(29), resultSet.getInt(38), resultSet.getInt(47)));
             }
             return matches;
         }
@@ -61,11 +61,20 @@ public class H2SQL {
             return null;
         }
     }
-    public MatchData getMatchData(int matchNumber, int teamNumber) { //todo finish
+    public MatchData getMatchData(int matchNumber, int teamNumber) {
         try {
+            int teamRow = 2;
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * From MATCHES WHERE MATCH_NUMBER=" + String.valueOf(matchNumber));
             resultSet.first();
+            for (int i = 1; i < 4; i++) {
+                teamRow = i * 9;
+                if (resultSet.getInt(teamRow) == teamNumber) {
+                    System.out.println(teamRow);
+                    break;
+                    //todo pull remaining data
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
