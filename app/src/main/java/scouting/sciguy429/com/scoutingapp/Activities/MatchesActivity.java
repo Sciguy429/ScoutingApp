@@ -28,7 +28,6 @@ public class MatchesActivity extends ListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         // Do something when a list item is clicked
-        Toast.makeText(getApplicationContext(), "Number: " + matches.get(position).matchNumber, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), MatchViewActivity.class);
         intent.putExtra("match", position + 1);
         startActivity(intent);
