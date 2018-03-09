@@ -20,6 +20,7 @@ public class MatchViewActivity extends AppCompatActivity {
     Button teamB1;
     Button teamB2;
     Button teamB3;
+    Button back;
     Match match;
 
     H2SQL H2SQL = new H2SQL();
@@ -36,6 +37,7 @@ public class MatchViewActivity extends AppCompatActivity {
         teamB1 = findViewById(R.id.teamB1Button);
         teamB2 = findViewById(R.id.teamB2Button);
         teamB3 = findViewById(R.id.teamB3Button);
+        back = findViewById(R.id.back);
 
         match = H2SQL.getMatch(getIntent().getIntExtra("match", 1));
         matchNumber.setText("Match Number: " + match.matchNumber);
@@ -51,8 +53,55 @@ public class MatchViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
                 intent.putExtra("match", match.matchNumber);
-                intent.putExtra("match", 1288);
                 startActivity(intent);
+            }
+        });
+        teamR2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
+                intent.putExtra("match", match.matchNumber);
+                startActivity(intent);
+            }
+        });
+        teamR3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
+                intent.putExtra("match", match.matchNumber);
+                startActivity(intent);
+            }
+        });
+
+        teamB1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
+                intent.putExtra("match", match.matchNumber);
+                startActivity(intent);
+            }
+        });
+        teamB2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
+                intent.putExtra("match", match.matchNumber);
+                startActivity(intent);
+            }
+        });
+        teamB3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MatchEditActivity.class);
+                intent.putExtra("match", match.matchNumber);
+                startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
