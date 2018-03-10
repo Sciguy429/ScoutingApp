@@ -32,6 +32,15 @@ public class MatchEditActivity extends AppCompatActivity {
 
     Button cancel;
     Button confirm;
+    
+    Button cubesPlacedOnScaleIncrement;
+    Button cubesPlacedOnScaleDecrement;
+    
+    Button cubesPlacedOnSwitchIncrement;
+    Button cubesPlacedOnSwitchDecrement;
+    
+    Button cubesPlacedInPortalIncrement;
+    Button cubesPlacedInPortalDecrement;
 
     ArrayList<String> designations = new ArrayList<>();
 
@@ -63,6 +72,51 @@ public class MatchEditActivity extends AppCompatActivity {
 
         cancel = findViewById(R.id.matchCancel);
         confirm = findViewById(R.id.matchConfirm);
+        
+        cubesPlacedOnScaleIncrement = findViewById(R.id.cubesOnScaleIncrement);
+        cubesPlacedOnScaleIncrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cubesPlacedOnScale.setText(String.valueOf(Integer.valueOf(cubesPlacedOnScale.getText().toString()) + 1));
+            }
+        });
+        cubesPlacedOnScaleDecrement = findViewById(R.id.cubesOnScaleDecrement);
+        cubesPlacedOnScaleDecrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cubesPlacedOnScale.setText(String.valueOf(Integer.valueOf(cubesPlacedOnScale.getText().toString()) - 1));
+            }
+        });
+
+        cubesPlacedOnSwitchIncrement = findViewById(R.id.cubesOnSwitchIncrement);
+        cubesPlacedOnSwitchIncrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cubesPlacedOnSwitch.setText(String.valueOf(Integer.valueOf(cubesPlacedOnSwitch.getText().toString()) + 1));
+            }
+        });
+        cubesPlacedOnSwitchDecrement = findViewById(R.id.cubesOnSwitchDecrement);
+        cubesPlacedOnSwitchDecrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cubesPlacedOnSwitch.setText(String.valueOf(Integer.valueOf(cubesPlacedOnSwitch.getText().toString()) - 1));
+            }
+        });
+
+        cubesPlacedInPortalIncrement = findViewById(R.id.cubesInPortalIncrement);
+        cubesPlacedInPortalIncrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cubesPlacedInPortal.setText(String.valueOf(Integer.valueOf(cubesPlacedInPortal.getText().toString()) + 1));
+            }
+        });
+        cubesPlacedInPortalDecrement = findViewById(R.id.cubesInPortalDecrement);
+        cubesPlacedInPortalDecrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cubesPlacedInPortal.setText(String.valueOf(Integer.valueOf(cubesPlacedInPortal.getText().toString()) - 1));
+            }
+        });
 
         matchName.setText("Match " + matchData.matchNumber + " (" + designations.get(matchData.matchTeamDesignation) + ")");
         teamNumber.setText("Team: " + String.valueOf(matchData.teamNumber));
