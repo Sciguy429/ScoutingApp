@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.exportDatabase:
                 zipFileAtPath(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB/", Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB-EXPORT.zip");
-                Toast.makeText(this, "Database Exported To \n" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB-EXPORT.zip", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Database Exported To\n" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/DB-EXPORT.zip", Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
