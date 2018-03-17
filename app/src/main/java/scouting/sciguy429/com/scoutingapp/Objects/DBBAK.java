@@ -3,7 +3,7 @@ package scouting.sciguy429.com.scoutingapp.Objects;
 public class DBBAK {
     public String sql = ";             \n" +
             "CREATE USER IF NOT EXISTS JAVAADMIN SALT '60910cc8c1e3edc8' HASH '223fd9678b9436d6ca54c0e6908959c8e1f29e6ed2c6864864a46397b0f71f90' ADMIN;    \n" +
-            "CREATE USER IF NOT EXISTS SA SALT '9e52b2e038d4dfa7' HASH 'ad5ab7703ca3c6f056ea056d1601d56db128cb4647f9318695c71a422882c390' ADMIN;           \n" +
+            //removed
             "CREATE CACHED TABLE PUBLIC.MATCHES(\n" +
             "    MATCH_NUMBER INTEGER NOT NULL,\n" +
             "    MATCH_R1_NUMBER INTEGER,\n" +
